@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "GuideViewController.h"
+#import "HomeViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +20,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    GuideViewController * guideVC = [[GuideViewController alloc]init];
+    
+    guideVC.startAppBlock = ^{
+        HomeViewController *VC = [HomeViewController new];
+        self.window.rootViewController = VC;
+    };
+    
+    self.window.rootViewController  = guideVC;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

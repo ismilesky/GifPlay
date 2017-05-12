@@ -8,7 +8,10 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
+
+//@property (strong, nonatomic) IBOutlet YYAnimatedImageView *gifImgView;
 
 @end
 
@@ -17,8 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //    [self.gifImgView startAnimating];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
