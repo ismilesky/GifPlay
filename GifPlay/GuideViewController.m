@@ -30,7 +30,6 @@
 
 @property (strong, nonatomic) NSMutableArray *animatedImageViews;
 @property (assign, nonatomic) int lastPage;
-@property (assign, nonatomic) BOOL isFirst;
 @end
 
 @implementation GuideViewController
@@ -41,6 +40,11 @@
     [self setupDefault];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.animatedImageViews removeAllObjects];
+    self.animatedImageViews = nil;
+}
 
 #pragma mark - Method
 - (NSMutableArray *)animatedImageViews {
