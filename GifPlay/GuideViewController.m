@@ -126,6 +126,10 @@
     CGFloat pages = scrollView.contentOffset.x / scrollView.frame.size.width;
     int page = (int)(pages + 0.5);
     
+    if (self.lastPage == page) {
+        return;
+    }
+    
     [self setupAnimateImage:page];
     
     [self setupFistFrameImageWithPage:page];
